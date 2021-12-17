@@ -1,13 +1,13 @@
-import './App.css';
+
 import NavBar from './components/NavBar/NavBar';
 
-import ItemCount from "./components/NavBar/ItemCount"
+import ContenedorProductos from './components/ContenedorProductos';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
-      <ItemCount initialValue={0}/>
+      <ContenedorProductos/>
     </div>
   );
 }
