@@ -1,9 +1,12 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 //Componentes
-import Contador from './Contador'
 
 
-const Producto = (props) => {
+
+const Item = (props) => {
+
+    console.log(props.id)
 
 
     return (
@@ -21,10 +24,10 @@ const Producto = (props) => {
                 Stock: { props.stock }
             </p>
 
-            <Contador stock={ props.stock } />
+            <Link to={`${props.id}`}>Ver producto</Link>
 
         </div>
     )
 }
 
-export default Producto
+export default Item
