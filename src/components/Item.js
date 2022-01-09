@@ -1,12 +1,10 @@
-import React from 'react'
+
 import {Link} from 'react-router-dom'
 //Componentes
 
 
 
 const Item = (props) => {
-
-    console.log(props.id)
 
 
     return (

@@ -15,7 +15,7 @@ const ItemListContainer = () => {
                 
                 flag ? resolve(productsList) : rechazo("Che, fallo promesa");
     
-            }, 2000);
+            }, 200);
     
         });
 

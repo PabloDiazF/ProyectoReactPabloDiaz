@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Contador = (props) => {
+const Contador = ({stock,setQuantityToAdd}) => {
 
     const [ contador, setContador  ] = useState(0)
+
+    console.log({contador})
 
     const aumentar = () => {
         setContador(contador + 1)
@@ -11,16 +13,22 @@ const Contador = (props) => {
         setContador(contador - 1)
     }
 
+    useEffect(() => {
+        setQuantityToAdd(contador)
+    }, [contador])
+
     return (
         <div>
-            <button onClick={ aumentar } disabled={contador === props.stock}>
-                Sumar
+            <button onClick={ restar } 
+            disabled={ contador === 0 } >
+                -
             </button>
             -
-            <span> { props.stock === 0 ? 'No hay stock' : contador } </span>
+            <span> { stock === 0 ? 'No hay stock' : contador } </span>
             -
-            <button onClick={ restar } disabled={ contador === 0 } >
-                Restar
+            <button onClick={aumentar }  
+            disabled={contador === stock}>
+                +
             </button>
         </div>
     )
