@@ -11,6 +11,6 @@ export const productsList = [
         nombre: 'Pantalon',
         precio: 100,
         stock: 20,
-        image: 'https://http2.mlstatic.com/D_NQ_NP_679921-MLA47763344100_102021-O.webp'
+        image: 'https://http2.mlstatic.com/D_NQ_NP_679921-MLA47763344100_102021-O.webp',
     },
 ];

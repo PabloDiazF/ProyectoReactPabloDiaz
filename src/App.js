@@ -1,12 +1,14 @@
 
-
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetail from "./components/ItemDetail";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import Cart from "./components/Cart";
 
+
+
 function App() {
+
 
 
   return (
