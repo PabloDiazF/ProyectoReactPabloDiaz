@@ -1,0 +1,37 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    /* border: solid 1px red; */
+}
+.item h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.item img {
+    width: 75%;
+    margin-bottom: 1rem;
+}
+.item .content {
+    background-color: rgb(240, 238, 238);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    width: 100%;
+}
+.item .content p {
+    margin-bottom: 0.5rem;
+}
+.item .content a {
+    text-decoration: none;
+    color: darkblue;
+    font-weight: 700;
+    cursor: pointer;
+}
+.item .content a:hover {
+    text-decoration: underline;
+}

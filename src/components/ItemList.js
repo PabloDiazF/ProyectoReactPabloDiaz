@@ -1,33 +1,30 @@
-
 import Item from './Item'
+import './ItemList.css'
 
-const ItemList = (props) => {
-    
+const ItemList = ({ products }) => {
     //Si no hay productos
-    if( props.products.length === 0 ){
+    if (products.length === 0) {
         return (
             <div>
                 <h1>Cargando...</h1>
             </div>
         )
     }
-    
+
     //Si ya hay productos muestro los productos
     return (
-        <div>
-            {
-                props.products.map( p => (
-
-                    <Item 
-                        nombre={p.nombre} 
-                        precio={p.precio} 
-                        stock={p.stock}
-                        id={p.id}
-                        key={p.id}
-                    />
-
-                ) )
-            }
+        <div className="item-list">
+            {products.map(({ name, price, stock, pictureUrl, id, category }) => (
+                <Item
+                    name={name}
+                    price={price}
+                    stock={stock}
+                    pictureUrl={pictureUrl}
+                    id={id}
+                    category={category}
+                    key={id}
+                />
+            ))}
         </div>
     )
 }

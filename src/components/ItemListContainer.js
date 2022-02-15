@@ -1,51 +1,47 @@
-import  { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { getDocs } from 'firebase/firestore'
+import { docsByCategory, itemsCollection } from '../firebaseConfig'
 import ItemList from './ItemList'
-import { collection, getDoc, getFirestore } from 'firebase/firestore'
-import { db } from 'firebase'
+
+import './ItemListContainer.css'
 
 const ItemListContainer = () => {
+    const [products, setProducts] = useState([])
 
-    const [ products, setProducts ] = useState([]);
+    const { pathname } = useLocation()
 
     useEffect(() => {
-
-        // const db = getFirestore();
-
-        // const productRef = collection(db, "productos", "4dBm31tR1TNRmvvhqAdN");
-
-        // getDoc(productRef).then( (snapshot) => {
-        //     console.log(snapshot)
-        //     if ( snapshot.exists()) {
-        //         console.log(snapshot)
-        //     }
-        // }) 
-
-        
-
-        // const promesa = new Promise( ( resolve, rechazo ) => {
-
-        //     let flag = true;
-    
-        //     setTimeout(() => {
-                
-        //         flag ? resolve(productsList) : rechazo("Che, fallo promesa");
-    
-        //     }, 200);
-    
-        // });
-
-        // promesa
-        // .then((info) => {
-        //     setProducts(info)
-        // })
-        // .catch(rechazo => console.log(rechazo))
-    
-    },[])//Con un array vacio le digo que esto pase cuando se renderize por primera vez y nada mas
-
+        if (pathname === '/') {
+            // Todos los productos
+            getDocs(itemsCollection).then((snapshot) => {
+                let items = []
+                snapshot.docs.forEach((doc) => {
+                    items.push({
+                        id: doc.id,
+                        ...doc.data(),
+                    })
+                })
+                setProducts(items)
+            })
+        } else {
+            // Products by category
+            getDocs(docsByCategory(pathname.slice(1))).then((snapshot) => {
+                let items = []
+                snapshot.docs.forEach((doc) => {
+                    items.push({
+                        id: doc.id,
+                        ...doc.data(),
+                    })
+                })
+                setProducts(items)
+            })
+        }
+    }, [pathname]) //Con un array vacio le digo que esto pase cuando se renderize por primera vez y nada mas
 
     return (
-        <div>
-            <ItemList products={products}/>
+        <div className="item-list-container">
+            <ItemList products={products} />
         </div>
     )
 }

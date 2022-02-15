@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
-const Contador = ({stock,setQuantityToAdd}) => {
+import './ItemCount.css'
 
-    const [ contador, setContador  ] = useState(0)
-
-    console.log({contador})
+const Contador = ({ stock, setQuantityToAdd }) => {
+    const [contador, setContador] = useState(0)
 
     const aumentar = () => {
         setContador(contador + 1)
@@ -18,16 +17,12 @@ const Contador = ({stock,setQuantityToAdd}) => {
     }, [contador])
 
     return (
-        <div>
-            <button onClick={ restar } 
-            disabled={ contador === 0 } >
+        <div className="item-count">
+            <button onClick={restar} disabled={contador === 0}>
                 -
             </button>
-            -
-            <span> { stock === 0 ? 'No hay stock' : contador } </span>
-            -
-            <button onClick={aumentar }  
-            disabled={contador === stock}>
+            -<span> {stock === 0 ? 'No hay stock' : contador} </span>-
+            <button onClick={aumentar} disabled={contador === stock}>
                 +
             </button>
         </div>

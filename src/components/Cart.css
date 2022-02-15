@@ -12,31 +12,42 @@
     background-color: white;
     border: solid 1px black;
     padding: 1rem;
-    width: 60vw;
-
-
+    width: 70vw;
+    border-radius: 6px;
+}
+.cart-page .items-container li:first-child {
+    color: white;
+    background-color: purple;
+    border: 0;
 }
 .cart-page .items-container li {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1rem;
     margin: 0;
     border: solid 1px gray;
-
+    padding: 1rem;
 }
 .cart-page .items-container li img {
     height: 60px;
-
+    width: 60px;
+    object-fit: contain;
 }
 .cart-page .items-container li button {
     color: white;
-    background-color: blue;
+    background-color: purple;
+    font-size: 1rem;
     border-radius: 5px;
     outline: none;
     border: none;
-
+    height: 40px;
+    cursor: pointer;
+    padding: 0 0.5rem;
+    min-width: max-content;
 
     /* border-left: solid 2px black;
     border-right: solid 2px black; */
-
 }

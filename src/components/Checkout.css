@@ -1,0 +1,57 @@
+.checkout {
+    margin: 5vh auto;
+    width: 90vw;
+    padding: 4rem;
+    background-color: purple;
+    border-radius: 10px;
+}
+.checkout h1,
+.checkout h2 {
+    color: white;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.checkout hr {
+    border: 1px solid white;
+    width: 50%;
+    margin: 1rem auto;
+}
+.checkout form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 4rem;
+    box-shadow: 0 0 16px rgb(255, 255, 255);
+    border-radius: 5px;
+}
+form .form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+form label {
+    color: white;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    /* align-self: flex-end; */
+}
+.checkout form button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: purple;
+    font-weight: bold;
+    cursor: pointer;
+}

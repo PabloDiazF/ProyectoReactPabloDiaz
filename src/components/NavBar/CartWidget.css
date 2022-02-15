@@ -1,13 +1,11 @@
 .cart-widget {
-
     height: 50px;
     width: 50px;
-    padding: .5rem;
+    padding: 0.5rem;
     cursor: pointer;
-
 }
 .cart-widget:hover {
-    box-shadow: 0 0 6px rgb(63, 9, 63);
+    transform: scale(1.1);
 }
 .cart-widget a {
     display: flex;
@@ -16,7 +14,6 @@
     width: 100%;
     height: 100%;
 }
-
 
 .icon {
     position: relative;
